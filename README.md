@@ -1,1 +1,0 @@
-# gnardog.github.io
