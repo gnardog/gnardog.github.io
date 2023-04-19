@@ -1,0 +1,114 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Scalise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9d9d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .links-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-link {
+            display: block;
+            text-decoration: none;
+            background-color: #800080;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .main-link:hover {
+            background-color: #5a005a;
+        }
+
+        .main-link i {
+            margin-right: 5px;
+        }
+
+        .sub-link-container {
+            display: none;
+            margin-bottom: 10px;
+        }
+
+        .sub-link {
+            display: block;
+            text-decoration: none;
+            background-color: #6c757d;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .sub-link:hover {
+            background-color: #5a6268;
+        }
+    </style>
+    <script>
+        function toggleSubLinks(event, containerId) {
+            event.preventDefault();
+            const container = document.getElementById(containerId);
+            container.style.display = container.style.display === "none" ? "block" : "none";
+        }
+
+        function copyToClipboard(text) {
+            const textarea = document.createElement("textarea");
+            textarea.textContent = text;
+            textarea.style.position = "absolute";
+            textarea.style.left = "-9999px";
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+        }
+    </script>
+</head>
+<body>
+    <div class="links-container">
+        <h1>Mike's Links</h1>
+        <a href="#" class="main-link" onclick="toggleSubLinks(event, 'phone-sub-links')"><i class="fas fa-phone"></i>Phone</a>
+        <div id="phone-sub-links" class="sub-link-container">
+            <a href="tel:860-214-0007" class="sub-link">Call Mike: 860-214-0007</a>
+            <a href="#" class="sub-link" onclick="copyToClipboard('860-214-0007')">Copy Mike's cell</a>
+        </div>
+        <a href="#" class="main-link" onclick="toggleSubLinks(event, 'email-sub-links')"><i class="fas fa-envelope"></i>Email</a>
+        <div id="email-sub-links" class="sub-link-container">
+            <a href="#" class="sub-link" onclick="window.open('mailto:scalise.mike@gmail.com', '_blank');">Personal: scalise.mike@gmail.com</a>
+            <a href="#" class="sub-link" onclick="window.open('mailto:michael.scalise@cvshealth.com', '_blank');">Work: michael.scalise@cvshealth.com</a>    
+        </div>
+        <a href="https://www.linkedin.com/in/michaelfscalise/" class="main-link" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+    </div>
+</body>
+</html>
+
+        
